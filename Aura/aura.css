@@ -1,0 +1,166 @@
+/* css */
+:root {
+  --gold: #c5a059;
+  --dark: #050505;
+}
+.text-gold {
+  color: var(--gold);
+}
+.bg-gold {
+  background-color: var(--gold);
+}
+.text-dark {
+  color: var(--dark);
+}
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+/* Premium Gold Accent */
+.bg-gold {
+  background-color: #c5a059;
+}
+
+/* Mix-blend-difference ensures the text color automatically 
+     flips from white to black as the white background slides in */
+.mix-blend-difference {
+  mix-blend-mode: difference;
+}
+
+/* --- FOCUS MODE LOGIC --- */
+/* When the GRID is hovered, all items become grayscale and dim */
+.focus-grid:hover .order-item {
+  filter: grayscale(100%) brightness(0.5);
+  opacity: 0.5;
+}
+
+/* But the specific item being HOVERED remains colorful and bright */
+.focus-grid .order-item:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Smooth transition for the filter effect */
+.order-item {
+  transition:
+    filter 0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+/* Typography and Colors */
+:root {
+  --gold: #d3a652;
+  --dark: #050505;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+.bg-gold {
+  background-color: var(--gold);
+}
+.text-dark {
+  color: var(--dark);
+}
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+/* Filter Buttons Styling */
+.menu-filter.active {
+  border-color: var(--gold);
+}
+
+/* Add a custom cursor helper if needed since articles use cursor-none */
+.order-item {
+  cursor: crosshair; /* fallback */
+}
+
+/* end */
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+body {
+  cursor: none; /* Hide default cursor for custom one */
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* CUSTOM CURSOR */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #d4af37;
+}
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+}
+
+/* HOVER STATES FOR CURSOR */
+body.hovering .cursor-outline {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(212, 175, 55, 0.1);
+  border-color: transparent;
+}
+
+/* FADE IN ANIMATION CLASS */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXTURE OVERLAY */
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+");
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.3;
+}
+
+/* IMAGE HOVER ZOOM */
+.img-wrapper {
+  overflow: hidden;
+}
+.img-wrapper img {
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.img-wrapper:hover img {
+  transform: scale(1.1);
+}
